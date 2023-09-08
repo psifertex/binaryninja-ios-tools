@@ -1,12 +1,12 @@
 from binaryninja import *
 
-from demangler import demangleString
+from .demangler import demangleString
 
 def define_types(bv):
     t, name = bv.parse_type_string("struct {void *isa; void *superclass; void *cache; void *vtable; void *data;} objc_class")
     bv.define_user_type(name, t)
 
-    t, name = bv.parse_type_string("struct { uint32_t flags; uint32_t instanceStart; uint32_t instanceSize; const uint8_t * ivarLayout; const char * name; void * baseMethodList; void * baseProtocols; void * ivars; const uint8_t * weakIvarLayout; void *baseProperties; } class_ro_t") 
+    t, name = bv.parse_type_string("struct { uint32_t flags; uint32_t instanceStart; uint32_t instanceSize; const uint8_t * ivarLayout; const char * name; void * baseMethodList; void * baseProtocols; void * ivars; const uint8_t * weakIvarLayout; void *baseProperties; } class_ro_t")
     bv.define_user_type(name, t)
 
     t, name = bv.parse_type_string("struct {char *name; const char *types; void *imp;} method_t")

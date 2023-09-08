@@ -1,9 +1,9 @@
 import string
 from enum import Enum
 
-from node import Node, Kind
+from .node import Node, Kind
 
-from printer import archetypeName
+from .printer import archetypeName
 
 MANGLING_MODULE_OBJC = '__ObjC'
 MANGLING_MODULE_C = '__C'

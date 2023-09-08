@@ -5,8 +5,8 @@ from binaryninja.log import log_error
 from binaryninja.lowlevelil import LowLevelILOperation
 from binaryninja.enums import SymbolType
 
-from modules import classlist_parser
-from modules import demangler
+from .modules import classlist_parser
+from .modules import demangler
 
 def define_classes(bv):
     if bv.view_type != 'Mach-O':
@@ -28,7 +28,7 @@ def define_classes(bv):
 def demangleImportsInFunction(bv, f):
     LOG_FILE='/Users/Kevin/debug-log.txt'
     os.remove(LOG_FILE)
-    logging.basicConfig(filename=LOG_FILE, level=logging.DEBUG) 
+    logging.basicConfig(filename=LOG_FILE, level=logging.DEBUG)
     logging.debug('Calling demangleSymbolAsNode()...')
     skipped = []
     successful = []

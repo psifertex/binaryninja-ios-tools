@@ -2,8 +2,8 @@ import string
 from enum import Enum
 from binaryninja import types
 
-from node import Node, Kind
-from old import demangleOldSymbolAsNode
+from .node import Node, Kind
+from .old import demangleOldSymbolAsNode
 
 # Using the enum34 package on the recommendation of https://stackoverflow.com/a/1695250/689100
 # In the Binary Ninja console
@@ -171,7 +171,7 @@ class Mangled():
         identifier_node = Node(Kind.IDENTIFIER, text=identifier)
 
         return identifier_node
-        
+
     def demangleNatural(self):
         length = 0
         for c in self.name[self.position:]:
